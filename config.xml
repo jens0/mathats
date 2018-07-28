@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>  <!-- under construction -->
+  <parse id="0xEC"			view="hidden"	size="x1+x4/x6"	/>  <!-- *\Void -->
+  <parse id="0x1A45DFA3"		view="child"			/>  <!-- EBML -->
+  <parse id="0x4287"	name="DocVersion"				/>  <!-- EBML\DocVersion -->
+  <parse id="0x4285"	name="DocReadVersion"				/>  <!-- EBML\DocReadVersion -->
+  <parse id="0x18538067" name="SEGMENT"	view="child"	size="x1+x10"	/>  <!-- SEGMENT -->
+  <parse id="0x114D9B74"		view="descend"	size="x1+x4/x6"	/>  <!-- SEGMENT\SeekHead -->
+  <parse id="0x4DBB"			reoc="hidden"/><!--reoccurrence-->  <!-- SEGMENT\SeekHead\Seek -->
+  <parse id="0x53AC"					uint="position"	/>  <!-- SEGMENT\SeekHead\Seek\SeekPosition -->
+  <parse id="0x1549A966"		view="child"			/>  <!-- SEGMENT\Info -->
+  <parse id="0x1654AE6B"		view="descend"			/>  <!-- SEGMENT\Tracks -->
+  <parse id="0xAE"			reoc="full"	/>  <!--default-->  <!-- SEGMENT\Tracks\TrackEntry -->
+  <parse id="0xD7"			view="hidden"			/>  <!-- SEGMENT\Tracks\TrackEntry\TrackNumber -->
+  <parse id="0x73C5"			view="itself"	/>  <!--default-->  <!-- SEGMENT\Tracks\TrackEntry\TrackUID -->
+  <parse id="0xB9"			view="hidden"			/>  <!-- SEGMENT\Tracks\TrackEntry\FlagEnabled -->
+  <parse id="0x88"			view="hidden"			/>  <!-- SEGMENT\Tracks\TrackEntry\FlagDefault -->
+  <parse id="0x55AA"			view="hidden"			/>  <!-- SEGMENT\Tracks\TrackEntry\FlagForced -->
+  <parse id="0x9C"			view="hidden"			/>  <!-- SEGMENT\Tracks\TrackEntry\FlagLacing -->
+  <parse id="0x63A2"			view="hidden"			/>  <!-- SEGMENT\Tracks\TrackEntry\CodecPrivate -->
+  <parse id="0x7446"	name="AttachLink"		uint="hex"	/>  <!-- SEGMENT\Tracks\TrackEntry\AttachLink -->
+  <parse id="0x23E383"	name="DfltDuration"				/>  <!-- SEGMENT\Tracks\TrackEntry\DfltDuration -->
+  <parse id="0x54B0"	name="DisplWidth"				/>  <!-- SEGMENT\Tracks\TrackEntry\Video\DisplWidth -->
+  <parse id="0x54BA"	name="DisplHeight"				/>  <!-- SEGMENT\Tracks\TrackEntry\Video\DisplHeight -->
+  <parse id="0x78B5"	name="OutputFreq"				/>  <!-- SEGMENT\Tracks\TrackEntry\Audio\OutputFreq -->
+  <parse id="0x1043A770"		view="descend"			/>  <!-- SEGMENT\Chapters -->
+  <parse id="0x45BC"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\EditionUID -->
+  <parse id="0x45BD"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\FlagHidden -->
+  <parse id="0x45DB"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\FlagDefault -->
+  <parse id="0x45DD"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\FlagOrdered -->
+  <parse id="0x73C4"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\ChapterAtom\ChapterUID -->
+  <parse id="0x98"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\ChapterAtom\FlagHidden -->
+  <parse id="0x4598"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\ChapterAtom\FlagEnabled -->
+  <parse id="0x437C"			view="hidden"			/>  <!-- SEGMENT\Chapters\EditionEntry\ChapterAtom\Display\Language -->
+  <parse id="0x1941A469" 		view="descend"	size="x6"	/>  <!-- SEGMENT\Attachments -->
+  <parse id="0x61A7"					size="x6"	/>  <!-- SEGMENT\Attachments\AttachedFile -->
+  <parse id="0x465C"					size="x6"	/>  <!-- SEGMENT\Attachments\AttachedFile\FileData -->
+  <parse id="0x1254C367"		view="descend"			/>  <!-- SEGMENT\Tags -->
+  <parse id="0x7373"			reoc="full"	/>  <!--default-->  <!-- SEGMENT\Tags\Tag -->
+  <parse id="0x447A"			view="hidden"			/>  <!-- SEGMENT\Tags\Tag\SimpleTag\TagLanguage -->
+  <parse id="0x4484"			view="hidden"			/>  <!-- SEGMENT\Tags\Tag\SimpleTag\TagDefault -->
+  <parse id="0x44B4"			view="hidden"			/>  <!-- SEGMENT\Tags\Tag\SimpleTag\TagDefau1t -->
+  <parse id="0x1F43B675" reoc="skipped"	view="descend"	size="x6"	/>  <!-- SEGMENT\Cluster -->
+  <parse id="0xA7"					uint="position"	/>  <!-- SEGMENT\Cluster\Position -->
+  <parse id="0xAB"					uint="hex6"	/>  <!-- SEGMENT\Cluster\PrevSize -->
+  <parse id="0xA3"			reoc="hidden"	size="x6"	/>  <!-- SEGMENT\Cluster\SimpleBlock -->
+  <parse id="0xA0"			reoc="hidden"	size="x6"	/>  <!-- SEGMENT\Cluster\BlockGroup -->
+  <parse id="0xA1"					size="x6"	/>  <!-- SEGMENT\Cluster\BlockGroup\Block -->
+  <parse id="0xFB"	name="RefBlock"					/>  <!-- SEGMENT\Cluster\BlockGroup\RefBlock -->
+  <parse id="0xC8"	name="RefFrame"					/>  <!-- SEGMENT\Cluster\RefFrame -->
+  <parse id="0xC9"	name="RefOffset"		uint="hex6"	/>  <!-- SEGMENT\Cluster\RefFrame\RefOffset -->
+  <parse id="0xCA"	name="RefTimestamp"				/>  <!-- SEGMENT\Cluster\RefFrame\RefTimestamp -->
+  <parse id="0x1C53BB6B" 		view="descend"	size="x1+x4/x6"	/>  <!-- SEGMENT\Cues -->
+  <parse id="0xBB"			reoc="hidden"			/>  <!-- SEGMENT\Cues\CuePoint -->
+  <parse id="0xF1"	name="ClusterPos"		uint="position"	/>  <!-- SEGMENT\Cues\CuePoint\Positions\ClusterPos -->
+  <parse id="0xF0" 	name="RelativePos"		uint="hex6"	/>  <!-- SEGMENT\Cues\CuePoint\Positions\RelativePos -->
+  <parse id="0x2AD1D3"			view="descend"			/>  <!-- SEGMENT\DivX -->
+
+  <mapping id="0x55EE">
+    <enum value="0" label="no"/>
+  </mapping>
+  <mapping id="0x4254">
+    <enum value="0" label="zlib"/>
+    <enum value="1" label="bzlib"/>
+    <enum value="2" label="lzo1x"/>
+    <enum value="3" label="header stripping"/>
+  </mapping>
+  <mapping id="0x68CA">
+    <enum value="70" label="COLLECTION"/>
+    <enum value="60" label="SEASON / VOLUME"/>
+    <enum value="50" label="MOVIE / ALBUM"/>
+    <enum value="40" label="PART / SESSION"/>
+    <enum value="30" label="CHAPTER / TRACK"/>
+    <enum value="20" label="SCENE / SUBTRACK"/>
+    <enum value="10" label="SHOT"/>
+  </mapping>
+
+  <!-- https://github.com/Matroska-Org/matroska-specification/blob/master/ebml_matroska.xml -->
+  <elementlist>ebml_matroska.xml</elementlist>  <!-- embl/matroska elements -->
+
+  <!-- https://github.com/Matroska-Org/foundation-source/blob/master/spectool/specdata.xml -->
+  <elementlist>specdata.xml</elementlist>  <!-- remaining embl elements -->
+
+  <table>  <!-- non-standard elements -->
+    <element id="0x44B4" name="TagDefau1t" level="4" type="uinteger"/>
+    <element id="0x5387" name="B1ockNumber" level="4" type="uinteger"/>
+    <element id="0x2AD1D3" name="DivX" level="1" type="master"/>
+    <element id="0x30A1D9" name="Point" level="2" type="master"/>
+    <element id="0x4A10" name="Time" level="3" type="uinteger"/>
+    <element id="0x4A11" name="Positions" level="3" type="master"/>
+    <element id="0x4A12" name="Track" level="4" type="uinteger"/>
+    <element id="0x4A13" name="CuePos" level="4" type="uinteger"/>
+  </table>
+
+  <table attached="RAWcooked reversibility data">  <!-- attached elements -->
+    <element id="0x465C" name="FileData" level="3" type="master"/>
+    <element id="0x46AE" name="FileUID" level="3" type="binary"/>
+    <element id="0x1A45DFA3" name="EBML" type="master"/>
+    <element id="0x4282" name="DocType" type="string"/>
+    <element id="0x4287" name="DocVersion" type="uinteger"/>
+    <element id="0x4285" name="DocReadVer" type="uinteger"/>
+    <element id="0x207273" name="Segment" type="master"/>
+    <element id="0x207274" name="Track" type="master"/>
+    <element id="0x207262" name="Block" type="master"/>
+    <element id="0x81" name="BeforeData" type="binary"/>
+    <element id="0x82" name="AfterData" type="binary"/>
+    <element id="0x83" name="MBBefore" type="binary"/>
+    <element id="0x84" name="MBAfter" type="binary"/>
+    <element id="0x90" name="FileName" type="unknown"/>
+    <element id="0x91" name="MBFileName" type="unknown"/>
+    <element id="0xF0" name="LibName" type="string"/>
+    <element id="0xF1" name="LibVersion" type="string"/>
+    <element id="0xF2" name="Separator" type="unknown"/>
+  </table>
+</config>
